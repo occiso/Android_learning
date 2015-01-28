@@ -17,10 +17,33 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.btnEvent();
+
+    }
+
+    private void btnEvent(){
         findViewById(R.id.btnWeb).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launchWeb();
+            }
+        });
+        findViewById(R.id.btnSms).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchSms();
+            }
+        });
+        findViewById(R.id.btnLlamar).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchTlf();
+            }
+        });
+        findViewById(R.id.btnSmsAlternativo).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launchSmsAlternative();
             }
         });
     }
@@ -42,6 +65,39 @@ public class MainActivity extends Activity {
         }
     }
 
+    protected void launchTlf(){
+        try {
+            String telefono = ((EditText) findViewById(R.id.etTelefono)).getText().toString();
+            Intent i = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + telefono));
+            startActivity(i);
+
+        }catch (ActivityNotFoundException e){
+                String msgError = getResources().getString(R.string.webError);//strings.xml
+                ((EditText) findViewById(R.id.etTelefono)).setError(msgError);
+        }
+    }
+
+    protected  void launchSms(){
+        try{
+            String telefono = ((EditText) findViewById(R.id.etTelefono)).getText().toString();
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("sms:" + telefono));
+            i.putExtra("sms_body", "Cuerpo del mensaje del sms");
+            startActivity(i);
+
+        }catch (ActivityNotFoundException e){
+            String msgError = getResources().getString(R.string.webError);//strings.xml
+            ((EditText) findViewById(R.id.etTelefono)).setError(msgError);
+        }
+    }
+
+    protected void launchSmsAlternative(){
+        String telefono = ((EditText) findViewById(R.id.etTelefono)).getText().toString();
+        Intent i = new Intent(Intent.ACTION_VIEW);
+        i.putExtra("address", telefono);
+        i.setType("vnd.android-dir/mms-sms");
+        i.putExtra("sms_body", "cuerpo del mensaje");
+        startActivity(i);
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -59,7 +115,7 @@ public class MainActivity extends Activity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            finish();
         }
 
         return super.onOptionsItemSelected(item);

@@ -4,9 +4,14 @@
     <string name="app_name">IntentExample</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
+    <string name="exit">Exit</string>
     <string name="direccion">Dirección</string>
     <string name="web">web</string>
     <string name="webError">No se ha encontrado el recurso (web, archivo...). Ejemplos: http://developer.android.com
      o  tel://123456 </string>
+    <string name="telefono">Teléfono</string>
+    <string name="sms">Enviar por SMS</string>
+    <string name="LlamarPorTelefono">Llamar por teléfono</string>
+    <string name="SmsAlternativo">Sms alternativo</string>
 
 </resources>

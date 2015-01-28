@@ -53,3 +53,4 @@
         android:id="@+id/btnSmsAlternativo"
         android:layout_gravity="center_horizontal" />
 </LinearLayout>
+<!-- From: file:/home/jose/androidStudioProjectsGit/Android_learning/MyApplication2/app/src/main/res/layout/activity_main.xml -->
