@@ -18,8 +18,6 @@ public class MainActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.relativeLayoutid);
-        relativeLayout.addView(new TextView(this));
         setContentView(R.layout.activity_main);
         mRecyclerView = (RecyclerView) findViewById(R.id.my_recycler_view);
 
