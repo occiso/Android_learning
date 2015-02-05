@@ -7,4 +7,6 @@ Proyectos Android para ir aprendiendo funcionalidad
 
 <b>MyAppNavitation</b>- ejemplo de NavigationDrawe y cambio de idioma a la aplicación.
 
+<b>AppListViewAdapter</b> Ejemplo de uso de ListView y GridView Creando un adapter personalizado
+
 
