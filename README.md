@@ -9,4 +9,6 @@ Proyectos Android para ir aprendiendo funcionalidad
 
 <b>AppListViewAdapter</b> Ejemplo de uso de ListView y GridView Creando un adapter personalizado
 
+<GridViewTwoColumn> visualizar una lista de imágenes con un texto sobreimpresionado. 
+
 
